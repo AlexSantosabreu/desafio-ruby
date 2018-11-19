@@ -17,8 +17,22 @@ gem 'uglifier', '>= 1.3.0'
 # user/privelege stuff
 gem 'devise'
 
+#for search
+gem 'searchkick'
+
 # DB options
 gem 'mongoid', '~> 6.1.0'
+
+# display stuff
+gem 'bootstrap', '~> 4.1.3'
+gem 'jquery-rails'
+
+# RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data
+gem 'rails_admin', '~> 1.3'
+
+gem 'kaminari-mongoid'
+
+gem 'httparty'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
