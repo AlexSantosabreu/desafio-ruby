@@ -20,8 +20,13 @@ gem 'devise'
 #for search
 gem 'searchkick'
 
+# managing events
+gem 'sidekiq'
+
 # DB options
 gem 'mongoid', '~> 6.1.0'
+gem "redis"
+
 
 # display stuff
 gem 'bootstrap', '~> 4.1.3'
