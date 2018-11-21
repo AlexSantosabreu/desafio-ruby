@@ -1,0 +1,25 @@
+<div class="stores">
+  <% @stores.each_slice(4) do |stores_group| %>
+    <div class="row">
+      <% stores_group.each do |store| %>
+        <div class="card col-md-4 text-center shadow-sm">
+          <%= link_to product_path(store.slug) do %>
+              
+                 <%= image_tag store.logo  %>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h4>
+                    <p><%= store.name %></p>
+                    </h4>
+                  </div>
+                </div>
+              
+          <% end %>
+
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  
+</div>
+
+         

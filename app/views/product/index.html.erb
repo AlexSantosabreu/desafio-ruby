@@ -1,0 +1,19 @@
+<div class="products">
+  <% @products.each_slice(4) do |chunk| %>
+    <div class="row">
+        <% chunk.each do |product| %>
+          <div class="col-md-3">
+            <%= link_to product.url_external, target: '_blank' do %>
+              <%= image_tag product.product_image, class: 'text-center img-responsive' %>
+              <div class="desc">
+                <p><strong><%= product.productName %></strong></p>
+                <p><%= monetize(product.price) %></p>
+                <p><%= installments_format(product.price, product.quota) %></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+  <%= paginate @products, theme: 'twitter-bootstrap-4' %>
+</div>

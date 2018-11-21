@@ -21,7 +21,7 @@ class CacthProductsJob < ApplicationJob
           url_external: resp["link"],
           product_image: resp["items"][0]["images"][0]["imageUrl"],
           price: resp["items"][0]["sellers"][0]["commertialOffer"]["Price"],
-          quota: resp["items"][0]["sellers"][0]["commertialOffer"]["Installments"].map { |c| c["NumberOfInstallments"] }.max,
+          quota: resp["items"][0]["sellers"][0]["commertialOffer"]["Installments"].map { |c| c["NumberOfInstallments"] }.max
           
         }
       end
@@ -32,7 +32,7 @@ class CacthProductsJob < ApplicationJob
   private
 
   def website(store)
-    _website  = store.website
-    _website.last == "/" ? _w[0..-2] : _website
+    _website = store.website
+    _website.last == '/' ? _website[0..-2] : _website
   end
 end

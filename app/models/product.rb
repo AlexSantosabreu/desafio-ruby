@@ -6,9 +6,12 @@ class Product
   field :quota, type: Integer
   field :product_image, type: String
   field :url_external, type: String
+  field :store
 
   #Relations
   belongs_to :store
+
+  accepts_nested_attributes_for :store
 
   rails_admin do
     list do

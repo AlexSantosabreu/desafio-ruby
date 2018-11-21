@@ -31,6 +31,7 @@ gem "redis"
 # display stuff
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+gem 'bootstrap4-kaminari-views'
 
 # RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data
 gem 'rails_admin', '~> 1.3'
@@ -38,6 +39,8 @@ gem 'rails_admin', '~> 1.3'
 gem 'kaminari-mongoid'
 
 gem 'httparty'
+
+gem 'mongoid-slug'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
