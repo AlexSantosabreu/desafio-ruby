@@ -1,0 +1,6 @@
+<div class="search_products">
+  <%= form_tag product_path, method: :get,  class:  'form-inline mt-2 mt-md-0' do %>
+    <%= text_field_tag :s, params[:s], placeholder: 'Buscar', class: 'form-control mr-sm-2' %>
+    <%= submit_tag "Buscar", class: 'btn btn-outline-success my-2 my-sm-0' %>
+  <% end %>
+</div>

@@ -13,9 +13,17 @@ class Product
   belongs_to :store
 
   after_create :products_reindex, if: :reindex
-  after_update :products_reindex, if: :name_changed?
+  after_update :products_reindex, if: :productName_changed?
 
   accepts_nested_attributes_for :store
+
+  searchkick
+  def search_data
+    {
+      productName:     productName,
+      store_id: store.id.to_s
+    }
+  end
 
   rails_admin do
     list do

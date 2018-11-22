@@ -1,4 +1,6 @@
+<%= render 'search' %>
 <div class="products">
+<%= render  "search" %>
   <% @products.each_slice(4) do |chunk| %>
     <div class="row">
         <% chunk.each do |product| %>

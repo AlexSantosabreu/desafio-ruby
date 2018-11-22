@@ -3,7 +3,7 @@ class CacthProductsJob < ApplicationJob
 
   queue_as :default
   
-  ROWS = 39
+  ROWS = 49
   
   def perform(store_id)
 
@@ -11,10 +11,10 @@ class CacthProductsJob < ApplicationJob
 
     product_list = []
 
-     (store.total_products/ROWS).ceil.times do |page|
+    (store.total_products/ROWS).ceil.times do |page|
       response = HTTParty.get("#{website(store)}/api/catalog_system/pub/products/search",
                  :query => "_from=#{page*ROWS}&_to=#{(page+1)*ROWS}").parsed_response
-      response.map do |resp|
+      response.each do |resp|
         product_list << {
           store_id: store.id,
           productName: resp["productName"],
@@ -33,7 +33,7 @@ class CacthProductsJob < ApplicationJob
   private
 
   def website(store)
-    _website = store.website
+    _website = store.website 
     _website.last == '/' ? _website[0..-2] : _website
   end
 end

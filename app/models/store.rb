@@ -6,7 +6,7 @@ class Store
   field :website, type: String
   field :logo, type: String
   field :email, type: String
-  field :total_products
+  field :total_products, type: Integer
   field :slug, type: String
   field :on_home_page, type: Boolean, default: false
 
