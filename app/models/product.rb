@@ -1,15 +1,19 @@
 class Product
   include Mongoid::Document
+  attr_accessor :reindex
 
   field :productName, type: String
   field :price, type: String
   field :quota, type: Integer
   field :product_image, type: String
   field :url_external, type: String
-  field :store
-
+  field :reindex 
+    
   #Relations
   belongs_to :store
+
+  after_create :products_reindex, if: :reindex
+  after_update :products_reindex, if: :name_changed?
 
   accepts_nested_attributes_for :store
 
@@ -31,9 +35,17 @@ class Product
       field :price
       field :quota
       field :store
+      field :reindex, :hidden do
+        default_value { true }
+      end
      
     end  
   end
-
+  
+  private
+  def products_reindex
+    self.class.reindex
+    
+  end
   
 end

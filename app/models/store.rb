@@ -27,7 +27,7 @@ class Store
 
   
   before_save :set_slug, if: -> { name_changed? || self.slug.blank? }
-  after_save :load_products_api, if: -> {website_changed? || total_products_changed? }
+  after_save :load_products_api, if: -> { website_changed? || total_products_changed? }
 
   
 
