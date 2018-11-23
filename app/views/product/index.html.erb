@@ -6,7 +6,7 @@
         <% chunk.each do |product| %>
           <div class="col-md-3">
             <%= link_to product.url_external, target: '_blank' do %>
-              <%= image_tag product.product_image, class: 'text-center img-responsive' %>
+              <%= image_tag product.product_image, class: 'justify-content-center img-responsive' %>
               <div class="desc">
                 <p><strong><%= product.productName %></strong></p>
                 <p><%= monetize(product.price) %></p>
