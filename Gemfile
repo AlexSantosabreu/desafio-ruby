@@ -81,5 +81,9 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+group :production do
+  gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
